@@ -517,7 +517,7 @@ export default {
       this.replyRequestId = requestId
 
       try {
-        const response = await fetch('/api/auto-reply', {
+        const response = await fetch('/.netlify/functions/auto-reply', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
