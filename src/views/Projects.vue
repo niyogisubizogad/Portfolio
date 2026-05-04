@@ -40,33 +40,44 @@
 </template>
 
 <script>
+import calculator from '../assets/calculator.png'; 
+import qoutes from '../assets/qoutes.png';
+import social from '../assets/socialtrack.png'
 export default {
   name: 'ProjectsView',
   data() {
     return {
       projects: [
         {
-          title: 'E-commerce Platform',
-          description: 'A full-featured e-commerce platform built with Vue.js and Node.js. Features include product catalog, shopping cart, and payment integration.',
-          image: 'https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-          technologies: ['Vue.js', 'Node.js', 'MongoDB', 'Express'],
-          github: 'https://github.com/Gad-off',
-          demo: ''
+          title: 'Calculator',
+          description: 'Multi-background color calculator this calculator was built by JavaScript Logic, it change background color after each 5 seconds ',
+          image: calculator,
+          technologies: ['HTML', 'CSS', 'JavaScript'],
+          github: 'https://github.com/niyogisubizogad',
+          demo: 'https://perfectcalculator.netlify.app/'
         },
         {
-          title: 'Task Management App',
-          description: 'A collaborative task management application with real-time updates. Includes team collaboration, task tracking, and progress monitoring.',
-          image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-          technologies: ['Vue.js', 'Firebase', 'Vuex'],
-          github: 'https://github.com/Gad-off',
-          demo: ''
+          title: 'Random Qoutes Generator',
+          description: 'A minimalist quote generator app that displays inspiring quotes along with their authors. Users can seamlessly browse through up to 100 carefully selected quotes using an intuitive next-arrow navigation, creating a smooth and engaging reading experience.',
+          image: qoutes,
+          technologies: ['HTML', 'CSS', 'Javascript'],
+          github: 'https://github.com/niyogisubizogad',
+          demo: 'https://qoutes100.netlify.app'
         },
         {
-          title: 'Portfolio Website',
-          description: 'A responsive portfolio website showcasing my work and skills. Built with modern web technologies and best practices for performance.',
-          image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-          technologies: ['Vue.js', 'CSS3', 'Vue Router'],
-          github: 'https://github.com/Gad-off',
+          title: 'Social Media followers counter',
+          description: 'A simple and efficient app that tracks and displays social media follower counts in real time. Monitor growth across platforms and stay updated with accurate, easy-to-read metrics.',
+          image: social,
+          technologies: ['HTML5', 'CSS3', 'JavaScript'],
+          github: 'https://github.com/niyogisubizogad',
+          demo: 'https://socialfans.netlify.app/'
+        },
+        {
+          title: 'Library API',
+          description: 'library management projet In this project user can borrow a book and and then system decrement number of book available. System provide access to authorized user',
+          image: 'JS',
+          technologies: ['Node.js', 'Express', 'Sequelize', 'Postgres','JWT'],
+          github: 'https://github.com/niyogisubizogad/library-api',
           demo: ''
         }
       ]
