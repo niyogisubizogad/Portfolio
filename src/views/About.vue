@@ -115,7 +115,7 @@
 </template>
 
 <script>
-import logoImage from "../assets/logo.png";
+import logoImage from "../assets/pic.jpg";
 
 export default {
   name: "AboutView",

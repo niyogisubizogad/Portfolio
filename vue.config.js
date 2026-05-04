@@ -1,6 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 
-const DEFAULT_HF_MODEL = 'Qwen/Qwen2.5-7B-Instruct:fastest'
+const DEFAULT_HF_MODEL = process.env.HF_MODEL
 
 function normalizeHistory(history = []) {
   if (!Array.isArray(history)) return []

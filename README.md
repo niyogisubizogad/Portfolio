@@ -87,7 +87,7 @@ Add your Hugging Face API key:
 
 ```
 HF_API_KEY=your_hugging_face_api_key_here
-HF_MODEL=Qwen/Qwen2.5-7B-Instruct:fastest
+HF_MODEL=Qwen fatest
 ```
 
 **How to get a Hugging Face API Key:**
@@ -131,8 +131,8 @@ portfolio/
 │   └── favicon.ico
 ├── src/
 │   ├── assets/
-│   │   ├── logo.png         # Profile picture
-│   │   └── logo.png        # Logo
+│   │   ├── pic.jpg         # Profile picture
+│   │   └── pic.jpg        # Logo
 │   ├── views/
 │   │   ├── Home.vue        # Social feed with stories & posts
 │   │   ├── About.vue       # Profile and CV information
@@ -247,7 +247,7 @@ All pages and components adapt seamlessly to different screen sizes.
 ```env
 # Hugging Face Configuration
 HF_API_KEY=your_api_key_here
-HF_MODEL=Qwen/Qwen2.5-7B-Instruct:fastest
+HF_MODEL= qwen fatest
 ```
 
 ## 📚 Page Details
