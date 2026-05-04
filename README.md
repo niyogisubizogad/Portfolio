@@ -131,7 +131,7 @@ portfolio/
 │   └── favicon.ico
 ├── src/
 │   ├── assets/
-│   │   ├── pic.jpg         # Profile picture
+│   │   ├── logo.png         # Profile picture
 │   │   └── logo.png        # Logo
 │   ├── views/
 │   │   ├── Home.vue        # Social feed with stories & posts

@@ -14,10 +14,19 @@
             <h1>Gad NiYoGiSuBiZo</h1>
             <p class="title">Frontend Developer</p>
             <p class="description">
-              Crafting polished social products with Vue.js and JavaScript. Passionate about building beautiful, responsive, and user-friendly applications.
+              Crafting polished social products with Vue.js and JavaScript.
+              Passionate about building beautiful, responsive, and user-friendly
+              applications.
             </p>
             <div class="social-links">
-              <a v-for="social in validSocialLinks" :key="social.label" :href="social.url" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <a
+                v-for="social in validSocialLinks"
+                :key="social.label"
+                :href="social.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+              >
                 <i :class="social.icon"></i>
               </a>
             </div>
@@ -31,7 +40,11 @@
           <h2>About Me</h2>
         </div>
         <div class="info-grid">
-          <div v-for="info in personalInfo" :key="info.label" class="info-card glass-panel">
+          <div
+            v-for="info in personalInfo"
+            :key="info.label"
+            class="info-card glass-panel"
+          >
             <div class="info-icon">
               <i :class="info.icon"></i>
             </div>
@@ -49,7 +62,11 @@
           <h2>Experience</h2>
         </div>
         <div class="timeline">
-          <div v-for="(exp, index) in experience" :key="index" class="timeline-item">
+          <div
+            v-for="(exp, index) in experience"
+            :key="index"
+            class="timeline-item"
+          >
             <div class="timeline-dot"></div>
             <div class="timeline-content glass-panel">
               <h3>{{ exp.position }}</h3>
@@ -59,6 +76,14 @@
             </div>
           </div>
         </div>
+        <div></div>
+        <div class="alert dark-alert" role="alert">
+          <p class="text-light mb-0">
+            I'm currently haven't working experience but I am trained well so be
+            first to work with me
+          </p>
+        </div>
+        
       </section>
 
       <!-- CV Section -->
@@ -66,11 +91,20 @@
         <div class="section-header">
           <h2>Curriculum Vitae</h2>
           <button class="toggle-btn" @click="isCVVisible = !isCVVisible">
-            <i :class="['fas', isCVVisible ? 'fa-chevron-up' : 'fa-chevron-down']"></i>
+            <i
+              :class="[
+                'fas',
+                isCVVisible ? 'fa-chevron-up' : 'fa-chevron-down',
+              ]"
+            ></i>
           </button>
         </div>
         <div v-if="isCVVisible" class="cv-content">
-          <div v-for="(item, index) in cvItems" :key="index" class="cv-item glass-panel">
+          <div
+            v-for="(item, index) in cvItems"
+            :key="index"
+            class="cv-item glass-panel"
+          >
             <h3>{{ item.title }}</h3>
             <p v-for="(line, i) in item.content" :key="i">{{ line }}</p>
           </div>
@@ -81,25 +115,45 @@
 </template>
 
 <script>
-import logoImage from '../assets/pic.jpg'
+import logoImage from "../assets/logo.png";
 
 export default {
-  name: 'AboutView',
+  name: "AboutView",
   data() {
     return {
       logoImage,
       isCVVisible: false,
       socialLinks: [
-        { label: 'GitHub', icon: 'fab fa-github', url: 'https://github.com/Gad-off' },
-        { label: 'WhatsApp', icon: 'fab fa-whatsapp', url: 'https://wa.me/250785662308' }
+        {
+          label: "GitHub",
+          icon: "fab fa-github",
+          url: "https://github.com/Gad-off",
+        },
+        {
+          label: "WhatsApp",
+          icon: "fab fa-whatsapp",
+          url: "https://wa.me/250785662308",
+        },
       ],
       personalInfo: [
-        { label: 'Email', value: 'offgad200@gmail.com', icon: 'fas fa-envelope' },
-        { label: 'Phone', value: '+250 785 662 308', icon: 'fas fa-phone' },
-        { label: 'Location', value: 'Kigali, Rwanda', icon: 'fas fa-map-marker-alt' },
-        { label: 'Status', value: 'Available for Freelance', icon: 'fas fa-check-circle' }
+        {
+          label: "Email",
+          value: "offgad200@gmail.com",
+          icon: "fas fa-envelope",
+        },
+        { label: "Phone", value: "+250 785 662 308", icon: "fas fa-phone" },
+        {
+          label: "Location",
+          value: "Kigali, Rwanda",
+          icon: "fas fa-map-marker-alt",
+        },
+        {
+          label: "Status",
+          value: "Available for Freelance",
+          icon: "fas fa-check-circle",
+        },
       ],
-      experience: [
+      /* experience: [
         {
           position: 'Senior Frontend Developer',
           company: 'Tech Company Inc.',
@@ -118,49 +172,51 @@ export default {
           duration: '2016 - 2018',
           description: 'Created and maintained websites, focusing on user experience and responsive design. Learned best practices from senior developers.'
         }
-      ],
+      ], */
       cvItems: [
         {
-          title: 'Personal Information',
+          title: "Personal Information",
           content: [
-            'Name: Gad Niyogisubizo',
-            'Location: Kigali, Rwanda',
-            'Email: offgad200@gmail.com'
-          ]
+            "Name: Gad Niyogisubizo",
+            "Location: Kigali, Rwanda",
+            "Email: offgad200@gmail.com",
+          ],
         },
         {
-          title: 'Education',
+          title: "Education",
           content: [
-            'Primary School: GS Karama (2015-2020)',
-            'Ordinary Level: (2021-2024)',
-            'Advanced Level: Collegio Santo Antonio Maria Zaccaria (2025-2028)'
-          ]
+            "Primary School: GS Karama (2015-2020)",
+            "Ordinary Level: (2021-2024)",
+            "Advanced Level: Collegio Santo Antonio Maria Zaccaria (2025-2028)",
+          ],
         },
         {
-          title: 'Skills',
+          title: "Skills",
           content: [
-            'Frontend Development: Vue.js, JavaScript, HTML, CSS',
-            'Backend Development: Node.js, Express, Databases',
-            'Tools & Technologies: Git, webpack, responsive design'
-          ]
+            "Frontend Development: Vue.js, JavaScript, HTML, CSS",
+            "Backend Development: Node.js, Express, Databases",
+            "Tools & Technologies: Git, webpack, responsive design",
+          ],
         },
         {
-          title: 'Languages',
+          title: "Languages",
           content: [
-            'Kinyarwanda (Native)',
-            'English (Fluent)',
-            'French (Basic)'
-          ]
-        }
-      ]
-    }
+            "Kinyarwanda (Native)",
+            "English (Fluent)",
+            "French (Basic)",
+          ],
+        },
+      ],
+    };
   },
   computed: {
     validSocialLinks() {
-      return this.socialLinks.filter((social) => /^https?:\/\//.test(social.url))
-    }
-  }
-}
+      return this.socialLinks.filter((social) =>
+        /^https?:\/\//.test(social.url)
+      );
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -168,17 +224,31 @@ export default {
   position: relative;
   min-height: calc(100vh - 76px);
   overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 16%, rgba(56, 189, 248, 0.22), transparent 28%),
-    radial-gradient(circle at 82% 18%, rgba(168, 85, 247, 0.18), transparent 26%),
+  background: radial-gradient(
+      circle at 18% 16%,
+      rgba(56, 189, 248, 0.22),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(168, 85, 247, 0.18),
+      transparent 26%
+    ),
     linear-gradient(180deg, #020617 0%, #08111f 36%, #0f172a 100%);
   color: #e2e8f0;
 }
 
 [data-theme="light"] .about-page {
-  background:
-    radial-gradient(circle at 18% 16%, rgba(56, 189, 248, 0.1), transparent 28%),
-    radial-gradient(circle at 82% 18%, rgba(168, 85, 247, 0.08), transparent 26%),
+  background: radial-gradient(
+      circle at 18% 16%,
+      rgba(56, 189, 248, 0.1),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(168, 85, 247, 0.08),
+      transparent 26%
+    ),
     linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #e0e7ff 100%);
   color: #1e293b;
 }
@@ -217,14 +287,23 @@ export default {
   right: -20%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.15), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.15),
+    transparent 70%
+  );
   border-radius: 50%;
   animation: float 25s ease-in-out infinite reverse;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(30px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
 }
 
 .about-container {
@@ -413,7 +492,7 @@ export default {
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -572,5 +651,12 @@ export default {
   .timeline-content {
     padding: 1.5rem;
   }
+}
+.dark-alert {
+  background: rgba(15, 23, 42, 0.6); /* dark transparent */
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
+  color: rgb(170, 77, 77);
+  border-radius: 12px;
 }
 </style>

@@ -104,12 +104,9 @@ export default {
       },
       isSubmitting: false,
       socialLinks: [
-        { name: 'GitHub', url: 'https://github.com/Gad-off', icon: 'fab fa-github' },
-        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/gad-niyogisubizo/', icon: 'fab fa-linkedin' },
+        { name: 'GitHub', url: 'https://github.com/niyogidubizogad', icon: 'fab fa-github' },
         { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100092313189365', icon: 'fab fa-facebook' },
-        { name: 'Instagram', url: 'https://www.instagram.com/g.a.d_o.f.f/', icon: 'fab fa-instagram' },
-        { name: 'YouTube', url: 'https://www.youtube.com/@Gad_Off-v9h', icon: 'fab fa-youtube' },
-        { name: 'TikTok', url: 'https://www.tiktok.com/@gad_off.2', icon: 'fab fa-tiktok' }
+        { name: 'Instagram', url: 'https://www.instagram.com/true_p.ath/', icon: 'fab fa-instagram' },
       ]
     }
   },
