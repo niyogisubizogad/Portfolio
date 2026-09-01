@@ -1,0 +1,100 @@
+/* ============================================================
+   Small shared utility classes
+   ============================================================ */
+
+/* Monospace eyebrow / label */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Monospace tag chip (stacks, metadata) */
+.tag {
+  display: inline-block;
+  padding: 0.24rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: var(--surface-muted);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.tag--accent {
+  color: var(--accent);
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+}
+
+/* Primary / secondary buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  padding: 0.7rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: background var(--speed-fast) ease,
+    border-color var(--speed-fast) ease, transform var(--speed-fast) ease,
+    color var(--speed-fast) ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+  color: var(--on-accent);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Panel section headings */
+.panel-section + .panel-section {
+  margin-top: 2.25rem;
+}
+
+.panel-section__title {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+/* Generic surface card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+}
+
+/* Icon + text inline row */
+.inline-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}

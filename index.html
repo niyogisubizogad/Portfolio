@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gad NiYoGiSuBiZo — software developer in Kigali, Rwanda building AI-powered web applications, backend APIs, and workflow automations."
+    />
+    <link rel="icon" href="/src/assets/images/gad-portrait.png" />
+
+    <!-- Apply the saved theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          /* default dark theme already set on <html> */
+        }
+      })();
+    </script>
+
+    <!-- Satoshi (UI/body) via Fontshare -->
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+    />
+    <!-- JetBrains Mono (labels, tags, percentages) via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+    />
+
+    <title>Gad NiYoGiSuBiZo — Software Developer</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript>
+      <strong
+        >This portfolio needs JavaScript enabled to run. Please enable it to
+        continue.</strong
+      >
+    </noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

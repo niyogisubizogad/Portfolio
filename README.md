@@ -1,371 +1,407 @@
-# Gad's Portfolio - Modern Social Feed with AI Messaging
+# Gad NiYoGiSuBiZo — Software Developer Portfolio
 
-A premium, responsive portfolio website featuring a social feed interface with integrated AI-powered messaging. Built with Vue.js, featuring dark/light theme support, real-time messaging, and an intelligent auto-reply system powered by Hugging Face.
+A modern, single-page professional portfolio for **Gad NiYoGiSuBiZo** — a software developer based in Kigali, Rwanda, focused on building AI-powered web applications, backend APIs, and workflow automation.
 
-## 🌟 Features
+The portfolio presents projects, technical skills, experience, education, certifications, and contact details through an app-like interface — no traditional routed pages. A full-screen welcome screen, personal portrait, rotating introduction, and an icon sidebar with slide-over panels replace conventional navigation.
 
-- **Modern UI Design**
-  - Premium dark theme with ambient gradients
-  - Light theme support for better accessibility
-  - Glass panels with backdrop blur effects
-  - Smooth animations and transitions
-  - Responsive design for all devices
+> **Focus:** AI-powered web applications, backend APIs, accessible user interfaces, and workflow automation.
 
-- **AI-Powered Messaging**
-  - Integrated Gad AI assistant for auto-replies
-  - Built with Hugging Face Inference API
-  - Smart conversation system with real-time responses
-  - Loading spinner animations
+---
 
-- **Portfolio Sections**
-  - **Home:** Social feed interface with stories and posts
-  - **About:** Professional profile and CV information
-  - **Projects:** Showcase of recent work with technology stack
-  - **Skills:** Technical skills with progress bars and tools
-  - **Contact:** Contact form and social media links
+## Preview
 
-- **Theme System**
-  - Toggle between dark and light themes
-  - Theme preference saved in localStorage
-  - Seamless transition between themes
-  - Optimized colors for each theme
+![Portfolio Preview](./src/assets/portfolio-preview.png)
 
-- **Social Integration**
-  - GitHub, LinkedIn, Facebook, Instagram, YouTube, TikTok
-  - WhatsApp and direct contact options
-  - Easy-to-customize social links
+---
 
-## 🛠️ Technologies Used
+## Live Demo
 
-### Frontend
-- **Vue.js 3** - Progressive JavaScript framework
-- **Vue Router** - Client-side routing
-- **CSS3** - Modern styling with CSS Grid and Flexbox
-- **Bootstrap 5** - Responsive grid system (navbar)
-- **Font Awesome** - Icon library
+- **Portfolio:** [Add deployed URL](https://truepath.netlify.app)
+- **GitHub:** [Gad NiY0GiSUBiZ0](https://github.com/niyogado)
 
-### Backend (Development)
-- **Node.js** - JavaScript runtime
-- **Express.js** - Dev server middleware (via Vue CLI)
+---
 
-### AI & APIs
-- **Hugging Face Inference API** - AI model hosting and inference
-- **Qwen/Qwen2.5-7B-Instruct** - Language model for auto-replies
+## Tech Stack
 
-### Build Tools
-- **Vue CLI** - Build and development server
-- **Webpack** - Module bundler
-- **Babel** - JavaScript transpiler
+| Layer | Technology |
+|---|---|
+| Framework | [Vue.js](https://vuejs.org/) 3.5 (Composition API + `<script setup>`) |
+| Build tool | [Vite](https://vitejs.dev/) 6 |
+| Icons | [Lucide](https://lucide.dev/) (via `lucide-vue-next`) |
+| Routing | **None** — all navigation is state-driven overlay panels |
+| Styling | Scoped CSS with semantic design tokens, `color-mix()` for translucent surfaces |
+| Fonts | [Satoshi](https://fontshare.com/fonts/satoshi) (UI/body), [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) (labels, tags, code) |
+| Contact form | [Web3Forms](https://web3forms.com/) API |
+| Deployment | Static `dist/` directory (Vercel, Netlify, etc.) |
 
-## 📋 Requirements
+---
 
-- **Node.js** >= 14.x
-- **npm** >= 6.x
-- **Hugging Face API Key** (for AI features)
+## Getting Started
 
-## 🚀 Quick Start
+### Prerequisites
 
-### 1. Installation
+- Node.js 18+
+- npm 9+
+
+### Local Development
 
 ```bash
-# Clone or download the project
-cd portfolio
-
-# Install dependencies
+# 1. Install dependencies
 npm install
+
+# 2. Start dev server
+npm run dev
+# → http://localhost:5173
+
+# 3. Build for production
+npm run build
+
+# 4. Preview production build locally
+npm run preview
 ```
 
-### 2. Environment Setup
+### Environment Variables
 
-Create a `.env` file in the project root:
+The contact form requires a Web3Forms access key. Copy the example file:
 
 ```bash
 cp .env.example .env
 ```
 
-Add your Hugging Face API key:
+Then add your real key to `.env`:
 
 ```
-HF_API_KEY=your_hugging_face_api_key_here
-HF_MODEL=Qwen fatest
+VITE_WEB3FORMS_ACCESS_KEY=your_actual_key_here
 ```
 
-**How to get a Hugging Face API Key:**
-1. Go to [huggingface.co](https://huggingface.co/)
-2. Sign up or log in
-3. Navigate to Settings → Access Tokens
-4. Create a new token with `read` access
-5. Copy the token and paste it in `.env`
-
-### 3. Development Server
-
-```bash
-# Start development server with hot-reload
-npm run serve
-```
-
-The app will be available at `http://localhost:8080`
-
-### 4. Production Build
-
-```bash
-# Build for production
-npm run build
-```
-
-This creates an optimized build in the `dist/` directory.
-
-### 5. Code Quality
-
-```bash
-# Lint and fix files
-npm run lint
-```
-
-## 📁 Project Structure
-
-```
-portfolio/
-├── public/
-│   ├── index.html          # Main HTML file
-│   └── favicon.ico
-├── src/
-│   ├── assets/
-│   │   ├── pic.jpg         # Profile picture
-│   │   └── pic.jpg        # Logo
-│   ├── views/
-│   │   ├── Home.vue        # Social feed with stories & posts
-│   │   ├── About.vue       # Profile and CV information
-│   │   ├── Projects.vue    # Project showcase
-│   │   ├── Skills.vue      # Technical skills and tools
-│   │   └── Contact.vue     # Contact form and social links
-│   ├── App.vue             # Root component with navigation
-│   ├── main.js             # Application entry point
-│   └── router.js           # Vue Router configuration
-├── .env                    # Environment variables (create this)
-├── .env.example            # Example environment variables
-├── vue.config.js           # Vue CLI configuration with AI middleware
-├── package.json            # Project dependencies
-├── babel.config.js         # Babel configuration
-└── README.md               # This file
-```
-
-## 🤖 AI Auto-Reply Feature
-
-The portfolio includes an intelligent auto-reply system that uses Hugging Face's Qwen model to generate helpful responses.
-
-### How It Works
-
-1. User sends a message in the Messages panel
-2. Message is sent to `/api/auto-reply` endpoint
-3. Vue CLI dev server processes the request with AI
-4. Gad AI generates a response using Hugging Face API
-5. Response is displayed with a typing animation
-
-### Example Message Flow
-
-```
-User: "Hey, how are you?"
-↓
-[Gad AI is typing...]
-↓
-Gad AI: "Hey! I'm doing great, thanks for asking! How can I help you today?"
-```
-
-### Customizing AI Behavior
-
-Edit the system prompt in `vue.config.js` (line ~75):
-
-```javascript
-{
-  role: 'system',
-  content: 'You are Gad AI, an intelligent assistant built by Gad NiYOGiSUBiZO. ...'
-}
-```
-
-## 🎨 Theme System
-
-The portfolio supports both dark and light themes with a toggle button in the navbar.
-
-### Switching Themes
-
-Click the **sun/moon icon** (☀️/🌙) in the top navigation bar to toggle themes.
-
-### Theme Preferences
-
-- Automatically detected from system preferences
-- Saved to browser's localStorage
-- Persists across sessions
-
-### Customizing Colors
-
-Edit CSS variables in `src/App.vue`:
-
-**Light Theme:**
-```css
-:root {
-  --primary-color: #38bdf8;        /* Cyan */
-  --text-color: #1e293b;           /* Dark blue-gray */
-  --background-color: #f8fafc;     /* Light gray */
-}
-```
-
-**Dark Theme:**
-```css
-[data-theme="dark"] {
-  --primary-color: #38bdf8;        /* Cyan */
-  --text-color: #e2e8f0;           /* Light gray */
-  --background-color: #020617;     /* Dark blue */
-}
-```
-
-## 📱 Responsive Design
-
-The portfolio is fully responsive with breakpoints at:
-- **Desktop:** 1200px and above
-- **Tablet:** 768px - 1199px
-- **Mobile:** Below 768px
-
-All pages and components adapt seamlessly to different screen sizes.
-
-## 🔧 Configuration
-
-### Customizing Content
-
-**Personal Information:**
-- Edit component data in respective Vue files
-- Update profile picture in `src/assets/`
-- Modify social links in component data
-
-**Colors & Styling:**
-- Global colors in `src/App.vue`
-- Page-specific styles in component `<style>` blocks
-- Responsive breakpoints in media queries
-
-### Environment Variables
-
-```env
-# Hugging Face Configuration
-HF_API_KEY=your_api_key_here
-HF_MODEL= qwen fatest
-```
-
-## 📚 Page Details
-
-### Home Page
-- Social feed interface with iPhone mockup
-- Stories carousel with company logos
-- Post cards with project information
-- Direct messaging overlay
-
-### About Page
-- Professional bio
-- Personal information cards
-- Experience timeline
-- Expandable CV section
-
-### Projects Page
-- Project cards with preview images
-- Technology stack badges
-- GitHub and demo links
-- Hover overlay effects
-
-### Skills Page
-- Skill categories with progress bars
-- Tools and technologies grid
-- Visual skill assessment
-- Icon-based tool showcase
-
-### Contact Page
-- Contact form with validation
-- Contact information display
-- Social media links
-- Direct WhatsApp integration
-
-## 🌐 Browser Support
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📝 License
-
-This project is personal portfolio software. All rights reserved.
-
-## 👨‍💻 Author
-
-**Gad NiYOGiSUBiZO**
-- Frontend Developer
-- Location: Kigali, Rwanda
-- Email: offgad200@gmail.com
-- Phone: +250 785 662 308
-
-### Social Links
-- GitHub: [Gad-off](https://github.com/Gad-off)
-- WhatsApp: [Chat on WhatsApp](https://wa.me/250785662308)
-- Facebook: [Profile](https://www.facebook.com/profile.php?id=100092313189365)
-- Instagram: [Gad](https://www.instagram.com/true_p.ath/)
-- YouTube: [@GadEditor](https://www.youtube.com/@niyogisubizogad)
-- TikTok: [@gadeditor](https://www.tiktok.com/@gadeditor)
-
-## 🐛 Troubleshooting
-
-### AI Auto-Reply Not Working
-
-**Problem:** Messages send but no AI response
-- ✓ Check `.env` file exists with `HF_API_KEY`
-- ✓ Verify API key is valid on Hugging Face
-- ✓ Restart dev server after env changes
-- ✓ Check browser console for errors
-
-### Light Theme Text Not Visible
-
-**Problem:** Text appears as dark on dark background
-- ✓ Hard-refresh browser (Ctrl+Shift+R)
-- ✓ Clear browser cache and localStorage
-- ✓ Check that `[data-theme="light"]` CSS is loaded
-
-### Build Errors
-
-**Problem:** npm run build fails
-- ✓ Delete `node_modules` folder
-- ✓ Run `npm install` again
-- ✓ Clear npm cache: `npm cache clean --force`
-
-### Port Already in Use
-
-**Problem:** "Port 8080 already in use"
-```bash
-# Use a different port
-npm run serve -- --port 3000
-```
-
-## 📖 Additional Resources
-
-- [Vue.js Documentation](https://vuejs.org/)
-- [Vue Router Guide](https://router.vuejs.org/)
-- [Hugging Face API Docs](https://huggingface.co/docs/api-inference)
-- [Bootstrap Documentation](https://getbootstrap.com/docs/)
-
-## 🚀 Future Enhancements
-
-- [ ] Backend database integration
-- [ ] Email form submission
-- [ ] Blog section
-- [ ] Project filtering and search
-- [ ] Dark mode animations
-- [ ] Internationalization (i18n)
-- [ ] Progressive Web App (PWA)
-- [ ] Analytics integration
-
-## 📞 Support
-
-For issues, questions, or feature requests:
-- Email: offgad200@gmail.com
-- WhatsApp: +250 785 662 308
-- GitHub Issues: (if repository is public)
+> **Never commit `.env` to version control.** The `.env` file is listed in `.gitignore`.
 
 ---
 
-**Made with ❤️ by Gad NiYOGiSUBiZO**
+## Project Structure
+
+```
+portfolio/
+├── index.html                 # Root HTML with pre-paint theme script
+├── vite.config.js             # Vite config with @ alias
+├── .env.example               # Environment variable template
+├── package.json
+│
+├── src/
+│   ├── main.js                # App entry — imports global styles + tokens
+│   ├── App.vue                # Root: theme, welcome, panels, navigation state
+│   │
+│   ├── data/                  # Content data files
+│   │   ├── profile.js         # Name, bio, contact links, nav structure
+│   │   ├── skills.js          # Technical skill categories + proficiency %
+│   │   ├── experience.js      # Work/remote learning + bootcamp timeline
+│   │   ├── education.js       # Education timeline (honest, no placeholders)
+│   │   ├── projects.js        # Project cards (AVIS → DevGram → Bootcamp)
+│   │   ├── certifications.js  # Certificate completion records
+│   │   └── quote.js           # Inspirational quote with verified source
+│   │
+│   ├── styles/                # Design system
+│   │   ├── tokens.css         # CSS custom properties (colors, spacing, fonts)
+│   │   ├── globals.css        # Base resets, semantic classes, focus states
+│   │   ├── animations.css     # Keyframe animations, transition helpers
+│   │   └── utilities.css      # Utility classes (visually-hidden, etc.)
+│   │
+│   ├── components/            # Reusable components
+│   │   ├── WelcomeScreen.vue  # Full-screen welcome: portrait + rotating intro
+│   │   ├── TypingHeadline.vue # Rotating typewriter headline (one-time cycle)
+│   │   ├── CodePanel.vue      # Decorative editor + terminal on PortfolioHome
+│   │   ├── PortfolioHome.vue  # Default home content with code panel (right)
+│   │   ├── AppSidebar.vue     # Left sidebar / bottom nav + theme toggle
+│   │   ├── SectionPanel.vue   # Slide-over overlay wrapper (Escape/Close)
+│   │   ├── QuoteCard.vue      # Inspirational quote (IntersectionObserver)
+│   │   ├── PanelFooter.vue    # Technology attribution footer for panels
+│   │   ├── SkillsGrid.vue     # Categorized skill cards + progress bars
+│   │   ├── SkillCategoryCard.vue
+│   │   ├── ProjectCard.vue
+│   │   └── panels/
+│   │       ├── AboutPanel.vue
+│   │       ├── ExperiencePanel.vue
+│   │       ├── EducationPanel.vue
+│   │       ├── ProjectsPanel.vue
+│   │       ├── CertificationsPanel.vue
+│   │       └── ContactPanel.vue
+│   │
+│   └── assets/
+│       ├── images/
+│       │   └── gad-portrait.png  # Professional portrait (welcome screen)
+│       └── images/portfolio-preview.png
+│
+├── public/
+│   └── Gad-NiYoGiSuBiZo-Resume.pdf   # Downloadable résumé
+│
+├── .env                       # Local environment (gitignored)
+└── .gitignore
+```
+
+---
+
+## Features
+
+### Welcome screen
+
+- Full-screen introduction with a professional portrait on the left.
+- **Rotating introduction** — a typewriter animation cycles through:
+  - "Hi, I am Gad NiY0GiSUBiZ0."
+  - "I am a Software Developer."
+  - "I build web applications."
+  - "I build frontend interfaces."
+  - "I build backend APIs and integrations."
+  - "I build AI-powered workflows."
+- Cycles gently (types → pauses → deletes → next line), then repeats.
+- A single non-animated sentence is exposed to screen readers.
+- **Reduced motion**: animation skipped entirely; final introduction renders statically.
+- Two primary calls to action:
+  - **Explore my work** — enters the portfolio shell.
+  - **Get in touch** — enters the portfolio shell and opens the Contact panel.
+- Location and availability status shown beneath the headline.
+- A decorative code panel appears only on the Portfolio Home screen on desktop (≥900px), not on the welcome screen.
+
+### Single-page application experience
+
+- No Vue Router. Navigation is driven by reactive state in `App.vue`:
+  - `entered` — controls whether the welcome screen or the portfolio shell is shown.
+  - `activePanel` — holds the ID of the open overlay panel (`null` when closed).
+- Sidebar + theme toggle persist across all panels.
+- Opening a panel slides in a full-height overlay (`SectionPanel`) with a dimming backdrop.
+- Closing via close button, `Escape` key, backdrop click, or sidebar "Home" icon.
+
+### Icon sidebar navigation
+
+Desktop uses a compact left sidebar (~64px, icons only):
+
+- **Home** — returns to the portfolio home stage.
+- **About** — bio, focus areas, technical skills with progress bars.
+- **Experience** — timeline of remote AI engineering learning and Kigali bootcamp.
+- **Education** — educational background timeline.
+- **Projects** — featured project cards (AVIS → DevGram → bootcamp).
+- **Certifications** — completion certificates.
+- **Contact** — email, GitHub, LinkedIn, WhatsApp, résumé download.
+- **Theme toggle** — Sun/Moon icon with hover tooltip ("Switch to light mode" / "Switch to dark mode").
+
+Sidebar labels appear on hover and keyboard focus via tooltips. On mobile, the sidebar becomes a fixed bottom navigation bar.
+
+### Code panel (Portfolio Home only)
+
+- A decorative code editor + terminal simulation appears on the right side of the home screen on desktop (≥900px).
+- Types a short, authentic JavaScript snippet character by character, then streams terminal output line by line.
+- Shows a final "Process completed successfully" success state with a green indicator.
+- The animation runs once and stays on the completed state.
+- `aria-hidden="true"` — decorative only, never focused or announced.
+- **Reduced motion**: renders the complete code and terminal output immediately with no animation.
+- Hidden entirely on mobile/tablet (below 900px).
+
+### Dark and light themes
+
+- **Dark mode**: deep navy / blue graphite surfaces (`#09111F`, `#0F1B2D`), never pure black.
+- **Light mode**: cool blue-tinted off-white surfaces (`#FCFDFF`), never pure white.
+- Ice-blue borders and outlines provide structure.
+- Single professional blue accent for links, icons, and interactions.
+- Theme preference stored in `localStorage`, with a pre-paint script in `index.html` to prevent flash-of-wrong-theme.
+
+### About & technical skills
+
+The About panel contains:
+
+- Professional biography.
+- Core professional focus areas.
+- Technical skill categories with individual stack names.
+- Self-assessed proficiency percentages with one-time animated progress bars.
+- Progress bars use `role="progressbar"` with accessible labels.
+
+Skill levels describe practical confidence based on project work and learning — not formal certifications or objective test scores.
+
+### Experience
+
+The Experience panel features a timeline:
+
+- Remote AI Engineering and workflow automation learning via Zoom.
+- n8n workflow automation experience.
+- Kigali Lightning Developer Bootcamp (Bitcoin and Lightning Network).
+- Résumé download button.
+- Link to Certifications.
+
+### Education
+
+The Education panel shows a vertical timeline of academic background:
+
+- **Collegio Santo Antonio Maria Zaccaria** — Advanced Level (A2) in Software Development (currently studying).
+- **GS Karama** — Ordinary Level (O-Level), completed.
+- **GS Karama** — Primary Education, completed.
+- Each entry has a status badge ("CURRENTLY STUDYING" / "COMPLETED") and an icon.
+- An honest empty state: "Education details are being updated."
+
+### Projects
+
+Projects are listed with AVIS featured first, DevGram second, then the Lightning bootcamp project:
+
+- **AVIS** — featured project (CV analysis / job matching AI tool).
+- **DevGram** — a developer-focused social feed application.
+- **Lightning Bootcamp Project** — Bitcoin and Lightning Network learning project.
+
+Each project card includes: problem, role, stack, and links. No fabricated screenshots or metrics.
+
+### Certifications
+
+The Certifications panel lists completion certificates:
+
+- AI Engineering completion certificate.
+- Workflow Automation with n8n completion certificate.
+
+### Contact
+
+The Contact panel includes:
+
+- Email: `offgad200@gmail.com`
+- GitHub: `https://github.com/niyogado`
+- LinkedIn: shown only when a real URL is provided (hidden otherwise)
+- WhatsApp: `https://wa.me/250785662308`
+- Résumé download button.
+
+A working contact form submits to Web3Forms via `fetch` POST with honeypot spam protection, loading states, and inline validation errors.
+
+### Panel footer
+
+Every overlay panel (About, Education, Experience, Projects, Certifications, Contact) includes a subtle technology attribution footer:
+
+```
+Built with Vue.js · JavaScript · CSS · Vite · Lucide Icons
+Made with care by Gad NiYoGiSuBiZo
+© {current year} Gad NiYoGiSuBiZo
+```
+
+---
+
+## Design System
+
+All colors use CSS custom properties defined in `src/styles/tokens.css`. No hardcoded hex values exist in component files.
+
+### Color tokens
+
+| Token | Dark mode | Light mode |
+|---|---|---|
+| `--bg` | `#09111F` (deep navy) | `#FCFDFF` (blue-white) |
+| `--surface` | `#0F1B2D` (blue graphite) | `#FFFFFF` (blue-tinted off-white) |
+| `--surface-muted` | `#132034` | `#F3F7FC` |
+| `--border` | ice-blue translucent | ice-blue translucent |
+| `--border-soft` | ice-blue soft | ice-blue soft |
+| `--text` | `#E2EAF3` | `#1A2A3A` |
+| `--text-muted` | `#9BB3CD` | `#647A93` |
+| `--accent` | `#5B9DF6` | `#3A82E6` |
+| `--accent-hover` | `#7DB0FF` | `#5A9EFF` |
+| `--accent-soft` | color-mix of accent | color-mix of accent |
+| `--accent-border` | color-mix of accent | color-mix of accent |
+| `--success` | `#4ADE80` | `#22C58E` |
+| `--backdrop` | dark scrim | light scrim |
+
+### Typography
+
+| Token | Font | Use |
+|---|---|---|
+| `--font-sans` | Satoshi (wght 400, 500, 700, 900) | UI, body text, headings |
+| `--font-mono` | JetBrains Mono (wght 400, 500, 700) | Labels, tags, percentages, code |
+
+### Spacing & sizing
+
+```
+--radius-sm:   4px
+--radius-md:   8px
+--radius-lg:   12px
+--radius-pill: 999px
+
+--sidebar-width: 64px
+--bottom-nav-height: 64px
+--speed-fast: 180ms
+--speed-normal: 300ms
+```
+
+### Semantic CSS classes
+
+- `.eyebrow` — small uppercase label at the top of sections.
+- `.btn` / `.btn--primary` / `.btn--ghost` — shared button styles with visible focus rings.
+- `.tag` — small rounded badge for focus areas and labels.
+- `.visually-hidden` — screen-reader-only text.
+- `.skip-link` — "Skip to main content" link visible on keyboard focus.
+
+---
+
+## Accessibility
+
+- **Semantic HTML**: `<main>`, `<nav>`, `<section>`, `<figure>`, `<ul>`/`<li>` used appropriately.
+- **Skip link**: visible on keyboard focus to skip to `#main-content`.
+- **Focus management**: Tab/Shift+Tab navigation, Escape to close panels, focus returns to trigger on close.
+- **ARIA**: panels use `role="dialog"` + `aria-modal="true"`, progress bars use `role="progressbar"` with `aria-valuenow`, form errors use `aria-describedby`.
+- **Keyboard**: all interactive elements are button elements or have proper role/keyboard handling.
+- **Reduced motion**: `prefers-reduced-motion: reduce` disables all non-essential animations (typing, code streaming, progress bars, panel transitions, quote reveal, caret blink).
+- **Contrast**: all color combinations checked for WCAG AA compliance in both themes.
+
+---
+
+## Contact Form (Web3Forms)
+
+The contact form submits via `fetch` POST to `https://api.web3forms.com/submit`:
+
+- Access key from `import.meta.env.VITE_WEB3FORMS_ACCESS_KEY` (env variable, never hardcoded).
+- `from_name: "Gad Portfolio Contact Form"`.
+- `subject` defaults to `"New portfolio message from {name}"` if the subject field is empty.
+- Hidden `botcheck` honeypot field for spam protection (no visible CAPTCHA).
+- Submit button disabled with "Sending message..." while in flight.
+- Success confirmed only when the API returns `{ success: true }`.
+- Error message with fallback contact instructions on failure.
+- Inline validation: Full name (required, min 2 chars), Email (required, valid format), Subject (optional), Message (required, min 10 chars).
+- Validation errors connected to inputs via `aria-describedby`.
+
+---
+
+## Build & Development
+
+```bash
+npm run dev       # Development server at http://localhost:5173
+npm run build    # Production build to /dist
+npm run preview  # Preview production build locally
+```
+
+- The build output goes to `dist/`.
+- CSS is scoped with PostCSS; no global style leaks between components.
+- All animations respect `prefers-reduced-motion: reduce`.
+
+---
+
+## Deployment
+
+The application can be deployed to:
+
+- **Vercel**: Connect your Git repository — Vite is auto-detected.
+- **Netlify**: Build command `npm run build`; publish directory `dist/`.
+- **GitHub Pages**: Use `npm run build` and push the `dist/` directory.
+- **Cloudflare Pages**: Build command `npm run build`; publish directory `dist/`.
+
+Before deployment:
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## Author
+
+**Gad NiY0GiSUBiZ0**
+
+Software Developer  |  Kigali, Rwanda
+
+- GitHub: [Gad-off](https://github.com/niyogado)
+- Email: [offgad200@gmail.com](mailto:offgad200@gmail.com)
+- WhatsApp: [Chat on WhatsApp](https://wa.me/250785662308)
+- Instagram: [@true_p.ath](https://instagram.com/true_p.ath/)
+
+---
+
+## License
+
+This is personal portfolio software. All rights reserved unless a different license is added to this repository.

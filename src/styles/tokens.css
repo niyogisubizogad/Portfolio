@@ -1,0 +1,98 @@
+/* ============================================================
+   Design tokens — dark-first, deep navy / blue graphite.
+   Light mode uses cool blue-grey. Never pure black or white.
+   ============================================================ */
+
+:root {
+  /* Surfaces (dark mode defaults) */
+  --bg: #09111f;
+  --bg-deep: #060d18;
+  --surface: #0f1b2d;
+  --surface-muted: #14243a;
+  --surface-raised: #1a2c46;
+
+  /* Text */
+  --text: #f1f6fc;
+  --text-muted: #a8b8cc;
+  --text-faint: #7c8fa6;
+
+  /* Structure */
+  --border: #294764;
+  --border-soft: #1c3350;
+
+  /* Accent */
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-soft: rgba(59, 130, 246, 0.14);
+  --accent-border: rgba(59, 130, 246, 0.38);
+
+  /* Text on accent surfaces (buttons, links) */
+  --on-accent: #ffffff;
+
+  /* Status */
+  --success: #34d399;
+  --error: #f87171;
+
+  /* Overlay backdrop behind slide-over panels */
+  --backdrop: rgba(4, 9, 18, 0.6);
+
+  /* Typography */
+  --font-body: "Satoshi", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Shape & elevation */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --shadow-panel: -24px 0 60px rgba(3, 8, 16, 0.55);
+  --shadow-card: 0 10px 30px rgba(3, 8, 16, 0.35);
+
+  /* Layout */
+  --sidebar-width: 64px;
+  --panel-max-width: 720px;
+  --bottom-nav-height: 64px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --speed-fast: 160ms;
+  --speed-base: 240ms;
+  --speed-slow: 380ms;
+
+  color-scheme: dark;
+}
+
+/* Light mode — cool blue-grey, never pure white */
+[data-theme="light"] {
+  --bg: #f3f7fc;
+  --bg-deep: #e9f0f8;
+  --surface: #fcfdff; /* blue-tinted off-white, never pure white */
+  --surface-muted: #eaf1f8;
+  --surface-raised: #dde8f4;
+
+  --text: #122033;
+  --text-muted: #5a6c82;
+  --text-faint: #7d8da1;
+
+  --border: #c8d9ea;
+  --border-soft: #d8e5f1;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+  --accent-border: rgba(37, 99, 235, 0.32);
+
+  /* Text on accent surfaces (buttons, links) */
+  --on-accent: #ffffff;
+
+  --success: #059669;
+  --error: #dc2626;
+
+  /* Overlay backdrop behind slide-over panels */
+  --backdrop: rgba(18, 32, 51, 0.35);
+
+  --shadow-panel: -24px 0 60px rgba(18, 32, 51, 0.18);
+  --shadow-card: 0 10px 30px rgba(18, 32, 51, 0.08);
+
+  color-scheme: light;
+}
