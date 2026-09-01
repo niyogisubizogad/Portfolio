@@ -300,11 +300,14 @@ function clearForm() {
 }
 
 async function submitForm() {
+  console.log("1. Contact submit started");
+
   status.value = "idle";
 
-  // Honeypot filled → almost certainly a bot. Pretend success and send
-  // nothing, so bots get no feedback signal and no request is made.
+  console.log("2. Honeypot value:", honeypot.value);
+
   if (honeypot.value) {
+    console.warn("Submission stopped: honeypot was filled.");
     clearForm();
     status.value = "success";
     return;
@@ -313,15 +316,29 @@ async function submitForm() {
   const fields = ["name", "email", "message"];
   const allValid = fields.map(validateField).every(Boolean);
 
+  console.log("3. Validation passed:", allValid);
+  console.log("4. Validation errors:", { ...errors });
+
   if (!allValid) {
     const firstInvalid = fields.find((field) => errors[field]);
+
+    console.warn("Submission stopped: invalid field:", firstInvalid);
+
     document.getElementById(FIELD_IDS[firstInvalid])?.focus();
     return;
   }
 
+  console.log("5. Web3Forms key exists:", Boolean(accessKey));
+  console.log(
+    "6. Web3Forms key format looks correct:",
+    accessKey?.startsWith("w3f_")
+  );
+
   if (!accessKey) {
-    // Missing VITE_WEB3FORMS_ACCESS_KEY — fail honestly instead of
-    // pretending the message was sent.
+    console.error(
+      "Submission stopped: VITE_WEB3FORMS_ACCESS_KEY is missing in the deployed build."
+    );
+
     status.value = "error";
     return;
   }
@@ -331,12 +348,22 @@ async function submitForm() {
   const payload = {
     access_key: accessKey,
     from_name: "Gad Portfolio Contact Form",
-    subject: form.subject.trim() || `New portfolio message from ${form.name.trim()}`,
+    subject:
+      form.subject.trim() ||
+      `New portfolio message from ${form.name.trim()}`,
     name: form.name.trim(),
     email: form.email.trim(),
     message: form.message.trim(),
     botcheck: honeypot.value,
   };
+
+  console.log("7. About to call Web3Forms fetch", {
+    endpoint: WEB3FORMS_ENDPOINT,
+    name: payload.name,
+    email: payload.email,
+    subject: payload.subject,
+    messageLength: payload.message.length,
+  });
 
   try {
     const response = await fetch(WEB3FORMS_ENDPOINT, {
@@ -348,20 +375,22 @@ async function submitForm() {
       body: JSON.stringify(payload),
     });
 
-    if (!response.ok) {
-      throw new Error(`Web3Forms responded with status ${response.status}`);
-    }
+    console.log("8. Web3Forms response status:", response.status);
 
     const result = await response.json();
 
-    // Only claim success when Web3Forms explicitly confirms it.
-    if (result && result.success === true) {
-      clearForm();
-      status.value = "success";
-    } else {
-      throw new Error(result.message || "Web3Forms did not confirm success");
+    console.log("9. Web3Forms response:", result);
+
+    if (!response.ok || result?.success !== true) {
+      throw new Error(
+        result?.message || `Web3Forms responded with status ${response.status}`
+      );
     }
-  } catch {
+
+    clearForm();
+    status.value = "success";
+  } catch (error) {
+    console.error("10. Web3Forms submission failed:", error);
     status.value = "error";
   }
 }
