@@ -38,8 +38,6 @@ export const skillCategories = [
       { name: "AI API Integration", level: 75 },
       { name: "Hugging Face Inference API", level: 70 },
       { name: "Prompt Design", level: 75 },
-      { name: "n8n", level: 35 },
-      { name: "Workflow Automation", level: 70 },
       { name: "Webhooks", level: 70 },
       { name: "AI Agent Concepts", level: 65 },
     ],

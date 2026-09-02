@@ -27,7 +27,7 @@ export const profile = {
     "Backend APIs & integration",
     "Accessible user interfaces",
   ],
-  email: "offgad200@gmail.com",
+  email: "",
   github: "https://github.com/niyogado",
   // LinkedIn placeholder — leave empty until the real profile URL is
   // provided; the Contact panel hides the channel while this is empty.

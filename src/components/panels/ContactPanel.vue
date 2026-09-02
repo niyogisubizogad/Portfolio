@@ -204,14 +204,7 @@ const status = ref("idle"); // idle | sending | success | error
 // but they are easy to swap in src/data/profile.js.
 const channels = computed(() =>
   [
-    {
-      id: "email",
-      label: "Email",
-      value: profile.email,
-      href: "mailto:" + profile.email,
-      icon: Mail,
-      external: false,
-    },
+    
     {
       id: "github",
       label: "GitHub",
@@ -228,21 +221,11 @@ const channels = computed(() =>
       icon: MessageCircle,
       external: true,
     },
-    profile.linkedin
-      ? {
-          id: "linkedin",
-          label: "LinkedIn",
-          value: profile.linkedin.replace("https://", ""),
-          href: profile.linkedin,
-          icon: Linkedin,
-          external: true,
-        }
-      : null,
     profile.instagram
       ? {
           id: "instagram",
           label: "Instagram",
-          value: profile.instagram.replace("https://", ""),
+          value: profile.instagram.replace("https:// /true_p.ath/", ""),
           href: profile.instagram,
           icon: Instagram,
           external: true,
